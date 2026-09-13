@@ -164,9 +164,48 @@ header {
   transform: translateX(5px);
 }
 
+/* About page */
+
 .about {
   height: 500px;
   background-color: #f9f9f9;
 }
 .about-container {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.about-image img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.about-content {
+  max-width: 550px;
+}
+.section-label {
+  color: #f3b516;
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 4px;
+}
+.about-content h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: #0d0e13;
+}
+.about-description {
+  color: #0d0e13;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 25px;
 }
