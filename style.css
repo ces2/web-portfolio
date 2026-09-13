@@ -163,3 +163,10 @@ header {
 #btn-portfolio i:hover {
   transform: translateX(5px);
 }
+
+.about {
+  height: 500px;
+  background-color: #f9f9f9;
+}
+.about-container {
+}
