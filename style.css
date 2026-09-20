@@ -65,22 +65,25 @@ header {
 /* Home */
 #home {
   min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
+  position: relative;
   padding: 0 10%;
   background-image: url(assets/web\ bg.png);
   background-repeat: no-repeat;
-  /* background-color: #1a1c22; */
-  padding-top: 80px;
+  background-color: #1a1c22;
+  padding-top: 50px;
   box-sizing: border-box;
+}
+.home-grid {
+  display: grid;
+  margin-top: 80px;
+  grid-template-columns: 2fr 1fr;
+  width: 100%;
+  align-items: end;
 }
 .home-content {
   display: flex;
   flex-direction: column;
-  width: 1500px;
+  width: 100%;
   padding: 10px;
 }
 .home-content .greeting {
@@ -105,11 +108,13 @@ header {
   font-family: Arial, Helvetica, sans-serif;
 }
 #profile {
-  width: 500px;
-  height: 600px;
-  object-fit: cover;
-  object-position: center top;
-  align-self: flex-end;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
 }
 .home-content .shape {
   margin-top: 10px;
@@ -168,12 +173,12 @@ header {
 
 .about {
   height: 500px;
-  background-color: #f9f9f9;
+  background-color: #d8d8d8;
+  padding-top: 50px;
 }
 .about-container {
   width: 90%;
   max-width: 1200px;
-
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -184,28 +189,101 @@ header {
   width: 100%;
   display: block;
   object-fit: cover;
+  border-radius: 0 30px 30px 30px;
 }
+
 .about-content {
   max-width: 550px;
 }
 .section-label {
+  font-family: Arial, Helvetica, sans-serif;
   color: #f3b516;
-  font-size: 13px;
+  font-size: 20px;
 
   font-weight: 600;
 
   letter-spacing: 1px;
 
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
 .about-content h2 {
   font-size: 30px;
   margin-bottom: 12px;
   color: #0d0e13;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .about-description {
   color: #0d0e13;
-  font-size: 14px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.7;
   margin-bottom: 25px;
 }
+
+/* Feautures */
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.feature {
+  text-align: center;
+}
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #0d0e13;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .about-content {
+    max-width: 100%;
+  }
+  .about-content h2 {
+    font-size: 26px;
+  }
+  .about-features {
+    grid-template-columns: 2, 1fr;
+    row-gap: 30px;
+  }
+
+  #profile {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: auto;
+    grid-row: 1;
+  }
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .home-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-row: 2;
+    }
+    #home {
+      height: 100vh;
+    }
+  }
+}
+
+/* i want to resposive display mobile and desktop */
