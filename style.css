@@ -251,6 +251,20 @@ header {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .nav-bar {
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 5%;
+  }
+  .nav-bar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  ..nav-menu a {
+    font-size: 13px;
+  }
   .about-container {
     grid-template-columns: 1fr;
     gap: 35px;
